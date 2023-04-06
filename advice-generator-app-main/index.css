@@ -99,6 +99,47 @@ button:hover {
 	color: hsl(150, 100%, 66%);
 }
 
+.language__container {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+.spanish,
+.english {
+	cursor: pointer;
+	text-align: center;
+	font-size: 1rem;
+	background-color: var(--dark-Grayish-Blue);
+	padding: 0.5rem;
+	border-radius: 0.3rem;
+	-webkit-border-radius: 0.3rem;
+	-moz-border-radius: 0.3rem;
+	-ms-border-radius: 0.3rem;
+	-o-border-radius: 0.3rem;
+	padding-left: 0.8rem;
+}
+.spanish:hover,
+.english:hover {
+	color: var(--dark-Blue);
+	background-color: var(--neon-Green);
+}
+
+.spanish.active,
+.english.active {
+	color: var(--dark-Blue);
+	background-color: var(--neon-Green);
+}
+
 @media screen and (min-width: 560px) {
 	main {
 		width: 33.75rem;
