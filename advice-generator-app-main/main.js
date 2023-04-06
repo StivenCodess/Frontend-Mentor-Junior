@@ -9,10 +9,19 @@ const fetchNewAdvice = async () => {
 	return data;
 };
 
-const renderAdvice = (adviceObject) => {
+const fetchTranslate = async (text) => {
+	const response = await fetch(
+		`https://api.mymemory.translated.net/get?q=${text}&langpair=en|es`
+	);
+	const data = await response.json();
+	return data.responseData.translatedText;
+};
+
+const renderAdvice = async (adviceObject) => {
 	const { id, advice } = adviceObject;
+	const adviceTranslated = await fetchTranslate(advice);
 	id_advice.innerHTML = id;
-	advice_text.innerHTML = advice;
+	advice_text.innerHTML = adviceTranslated;
 };
 
 const getNewAdvice = async () => {
